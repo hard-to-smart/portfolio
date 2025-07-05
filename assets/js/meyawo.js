@@ -61,6 +61,18 @@ const RESET = () => {
 };
 
 RESET();
+setTimeout(() => {
+ 
+  // Pull back and trigger animation
+  gsap.to(DUMMY_CORD, {
+    attr: { x2: ENDX + 14400, y2: ENDY + 1400},
+    duration: 0.1,
+    onComplete: () => {
+      AUDIO.CLICK.play();
+      CORD_TL.restart();
+    }
+  });
+}, 2000);
 
 const CORD_TL = gsap.timeline({
   paused: true,
@@ -129,6 +141,7 @@ Draggable.create(PROXY, {
 
 });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     var phone = document.getElementById('phoneno');
     phone.addEventListener('dblclick', function(e) {

@@ -12502,114 +12502,109 @@ pre .code {
 .section-lg {
   padding: 100px 0 !important;
 }
-
-/* card flipping effect */
 .flip-card {
   perspective: 1000px;
   position: relative;
-  min-height: 230px;
   overflow: hidden;
   border-radius: 3px;
+  height: 400px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 400px;
-  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card-front,
 .flip-card-back {
   position: absolute;
-  top: 0; /* Set the top and left properties to ensure */
-  left: 0; /* the front and back cards are overlaid on each other */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-}
-.flip-card-front,
-.flip-card-back {
-  /* ... existing styles ... */
   backface-visibility: hidden;
 }
 
 .flip-card-front {
   background-color: transparent;
-  min-height: 400px;
+  background-image: url("/assets/imgs/card.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1; /* Ensure the front card stays on top initially */
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: white;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.flip-card-front img {
-  object-fit:contain;
-  /* margin-right: -50px; This will ensure the image covers the entire container */
-  width: 100%;
-  height: 100%;
-  min-height: 400px;
-}
+
 .flip-card-back {
-  /* ... existing styles ... */
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-text {
-  position: absolute;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 5px;
+.flip-card-inner {
+  aspect-ratio: 1
 }
 
-.flip-card-back {
-  box-sizing: border-box; /* make padding included in the height */
-  background-color: #bbb;
-  color: white;
-
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.flip-card-back .content-container {
-  padding: 15px;
-  height: 100%;
-  overflow-y: auto;
-}
-/* write media query for filp-card */
+/* Optional - Responsive fix */
 @media (max-width: 767.98px)  {
   .flip-card {
-   overflow: scroll;
+    overflow-y: scroll;
+    height: 271px;
   }
-  .flip-card-front img{
-    position: relative;
+  .content-container img {
+    width: 60px;
+    height: 60px;
+    margin: 2px 0 ;
   }
-
 }
+
+
 
 .content-container{
   background-image: url(../../assets/imgs/card-front.png);
   border-image: auto;
-  width: 100%;
+  padding: 10px;
   height: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  
+  text-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content-container img{
+  width: 90px;
+  height: 90px;
+  margin: 2px 0;
+
+}
+
+@media (max-width: 767.98px)  {
+  .content-container img{
+    width: 60px;
+    height: 60px;
+    margin: 2px 0;
+  }
 }
 .sparkle {
   position: absolute;
@@ -12631,3 +12626,4 @@ pre .code {
 
   }
 }
+
