@@ -12530,7 +12530,7 @@ pre .code {
 
 .flip-card-front {
   background-color: transparent;
-  background-image: url("/assets/imgs/card.jpeg");
+  background-image: url(../../assets/imgs/card.jpeg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   color: black;
@@ -12541,7 +12541,6 @@ pre .code {
   font-size: 24px;
   font-weight: 900;
   text-transform: uppercase;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   color: white;
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
